@@ -1,0 +1,28 @@
+.grainient-page { position: relative; isolation: isolate; }
+.page-grainient-region {
+  position: absolute;
+  top: 100svh;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.page-grainient-view {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100svh;
+}
+.page-grainient-view::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 10, 10, .38);
+  pointer-events: none;
+}
+.grainient-page #about,
+.grainient-page #work,
+.grainient-page #expertise,
+.grainient-page #contact { background: transparent; }
+.grainient-page .contact-glow { display: none; }

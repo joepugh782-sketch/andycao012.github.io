@@ -1,0 +1,8 @@
+/* Keep category filters usable in narrow viewports. */
+.filters { min-width: 0; flex-wrap: wrap; row-gap: 8px; }
+.work-toolbar { gap: 16px; }
+.work-count { white-space: nowrap; }
+@media (max-width: 600px) {
+  .filters { flex: 1; }
+  .work-count { align-self: flex-start; padding-top: 10px; }
+}

@@ -1,0 +1,36 @@
+/* Masks stay local to type and imagery; glass-card edge lights remain unclipped. */
+.motion-title-mask,
+.hero-title-mask,
+.hero-copy-line-mask,
+.manifesto-line-mask,
+.contact-title-mask {
+  display: block;
+  overflow: clip;
+  overflow-clip-margin: 1px;
+}
+.motion-title-mask { padding: .15em .06em .18em; margin: -.15em -.06em -.18em; }
+.motion-title,
+.hero-title-word,
+.hero-copy-line-inner,
+.contact-title-line { display: block; transform-origin: 0% 100%; }
+.hero-editorial .hero-display > .hero-title-mask { padding: .14em .07em .16em; margin: -.14em -.07em -.16em; }
+.hero-copy-line-mask { padding-block: .07em; margin-block: -.07em; }
+.hero-editorial-manifesto .manifesto-line-mask { padding-block: .1em; margin-block: -.1em; }
+.hero-editorial-manifesto .manifesto-line-inner { display: flex; width: 100%; justify-content: space-between; gap: .3em; }
+.hero-editorial-manifesto > .manifesto-line-mask:last-child { color: var(--accent); }
+.hero-opening-shutter { position: absolute; inset: 0; z-index: 1; background: #08090b; transform: scaleY(0); transform-origin: 50% 0%; pointer-events: none; }
+.project-image-reveal,
+.project-image-depth { position: absolute; inset: 0; display: block; }
+.project-image-reveal { overflow: hidden; }
+.work-heading.motion-heading { align-items: flex-end; }
+.work-heading.motion-heading h2 { font-size: clamp(48px, 6.4vw, 108px); font-weight: 800; line-height: .94; margin-bottom: 14px; color: #f4f4f4; }
+.work-heading .profile-subtitle { margin-bottom: 15px; }
+.contact-title-mask { padding: .14em .04em .19em; margin: -.14em -.04em -.19em; }
+.contact-title-line { white-space: nowrap; }
+/* Avoid promoting all large images or frosted surfaces for the entire visit. */
+@media (max-width: 760px) {
+  .work-heading.motion-heading h2 { font-size: clamp(25px, 8.4vw, 60px); letter-spacing: -1.4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-opening-shutter { display: none; }
+}

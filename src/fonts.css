@@ -1,0 +1,17 @@
+/* Official, unmodified Adobe Source Han Sans CN variable webfont.
+   License and provenance: /fonts/source-han-sans-cn/LICENSE.txt and SOURCE.json.
+   CJK ranges only: Latin letters and digits retain the existing font stack. */
+@font-face {
+  font-family: 'Source Han Sans CN';
+  src: url('/fonts/source-han-sans-cn/SourceHanSansCN-VF.otf.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range:
+    U+2014, U+2018-2019, U+201C-201D, U+2026,
+    U+2E80-2FFF, U+3000-303F, U+3100-312F, U+31A0-31BF,
+    U+31C0-31EF, U+3200-33FF, U+3400-4DBF, U+4E00-9FFF,
+    U+F900-FAFF, U+FE10-FE1F, U+FE30-FE4F,
+    U+FF01-FF0F, U+FF1A-FF20, U+FF3B-FF40, U+FF5B-FF65,
+    U+20000-2FA1F, U+30000-323AF;
+}

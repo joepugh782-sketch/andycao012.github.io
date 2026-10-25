@@ -1,0 +1,9 @@
+{
+  "upstream": "https://github.com/adobe-fonts/source-han-sans",
+  "font_url": "https://raw.githubusercontent.com/adobe-fonts/source-han-sans/release/Variable/WOFF2/OTF/Subset/SourceHanSansCN-VF.otf.woff2",
+  "license_url": "https://raw.githubusercontent.com/adobe-fonts/source-han-sans/release/LICENSE.txt",
+  "license": "SIL Open Font License 1.1",
+  "git_blob_sha1": "f87772cec1747734cbea16204ae99e4f2cc06713",
+  "sha256": "7087698d52240614659957608d8c4ad446759aee3208409dc9f566412e7af8f4",
+  "modifications": "None; official CN subset WOFF2 used unchanged."
+}
