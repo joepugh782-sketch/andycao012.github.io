@@ -1,7 +1,7 @@
 // Identity, dates and figures transcribed from page 2 of the supplied PDF.
 // These figures describe the source portfolio, rather than live business metrics.
 export const portfolioDocument = {
-  href: '/portfolio.pdf?v=cc2c5d733844',
+  href: '/portfolio.pdf?v=fe59dba07297',
   pageCount: 32,
 };
 export const profile = {

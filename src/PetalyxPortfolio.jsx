@@ -63,7 +63,7 @@ function About() {
         <div className="px-brand-row"><div className="px-frost-band"/>{projects.map(p => <span key={p.key}>{p.english}</span>)}</div>
       </div>
     </div>
-    <div className="px-profile px-wrap"><div className="px-profile-photo px-reveal"><img src="/portrait.webp" width="595" height="592" alt="曹佳豪个人照片" loading="lazy"/><div><span>曹佳豪 / ANDY CAO</span><span>DESIGN WITH INTENTION</span></div></div>
+    <div className="px-profile px-wrap"><div className="px-profile-photo px-reveal"><img src="/portrait-andy-cao-square.webp" width="1254" height="1254" alt="曹佳豪个人照片" loading="lazy"/><div><span>曹佳豪 / ANDY CAO</span><span>DESIGN WITH INTENTION</span></div></div>
       <div className="px-profile-copy px-reveal"><Label>HELLO, I'M ANDY.</Label><h2>以品牌为起点，<br/>以产品为主角。</h2><p>{profile.bio}</p><div className="px-inline-contact"><a href={`tel:${profile.phone}`}><Phone size={16}/>{profile.phone}</a><a href={`mailto:${profile.email}`}><Mail size={16}/>{profile.email}</a></div></div>
     </div>
     <div className="px-journey px-wrap px-reveal"><div><Label>THE JOURNEY</Label><h3>每一程，皆有积淀。</h3></div><ol>{experience.map((job,i) => <li key={job.company}><span className="px-job-number">0{i+1}</span><div><h4>{job.company}</h4><p>{job.role}</p></div><time>{job.period}</time></li>)}</ol></div>
