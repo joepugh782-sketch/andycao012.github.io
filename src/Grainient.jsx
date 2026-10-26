@@ -259,6 +259,7 @@ const Grainient = ({
   angle = 55,
   bands = 1,
   speed = 1,
+  paused = false,
   flow = 0.8,
   scale = 1,
   softness = 1,
@@ -289,6 +290,7 @@ const Grainient = ({
     angle,
     bands: clamp(bands, 1, 8),
     speed: Math.max(0, speed),
+    paused,
     flow: clamp(flow, 0, 3),
     scale: clamp(scale, 0.25, 3),
     softness: clamp(softness, 0, 1),
@@ -521,23 +523,25 @@ const Grainient = ({
       const s = settingsRef.current;
       const dt = last ? clamp((now - last) / 1000, 0.001, 0.05) : 1 / 60;
       last = now;
-      if (!reduce) time += dt * s.speed * 0.16;
-      if (introClock < 1) introClock = Math.min(1, introClock + dt / INTRO_SECONDS);
-      grainClock += dt;
-      if (s.grainAnimated && !reduce && grainClock > 1 / 24) {
-        grainClock = 0;
-        frameSeed = (frameSeed + 1) % 97;
+      if (!s.paused) {
+        if (!reduce) time += dt * s.speed * 0.16;
+        if (introClock < 1) introClock = Math.min(1, introClock + dt / INTRO_SECONDS);
+        grainClock += dt;
+        if (s.grainAnimated && !reduce && grainClock > 1 / 24) {
+          grainClock = 0;
+          frameSeed = (frameSeed + 1) % 97;
+        }
+        updateTouches(dt, view.width / view.height);
       }
-      updateTouches(dt, view.width / view.height);
       draw();
       const busy =
-        (!reduce && (s.speed > 0 || s.grainAnimated)) || introClock < 1 || trail.length > 0 || spins.length > 0;
+        !s.paused && ((!reduce && (s.speed > 0 || s.grainAnimated)) || introClock < 1 || trail.length > 0 || spins.length > 0);
       if (busy) raf = requestAnimationFrame(frame);
       else last = 0;
     };
 
     function wake() {
-      if (!raf && visible && !document.hidden) raf = requestAnimationFrame(frame);
+      if (!raf && visible && !document.hidden && !settingsRef.current.paused) raf = requestAnimationFrame(frame);
     }
 
     const onMotionChange = event => {
